@@ -101,6 +101,9 @@ for comp, path in COMPETITIONS.items():
                 count += 1
 
     try:
+        if my_position == 0:
+            raise ValueError("Position is 0, skipping requests.")
+        
         percent_position = (1 - (my_position / count)) * 100
 
         requests.post("https://api.telegram.org/bot" + TOKEN_KEY + "/sendMessage", data={"chat_id": CHAT_ID, "text": "\n" + comp})
@@ -111,5 +114,7 @@ for comp, path in COMPETITIONS.items():
     except:
         requests.post("https://api.telegram.org/bot" + TOKEN_KEY +"/sendMessage", data={"chat_id": CHAT_ID, "text": f"\nNo se encontró tu nombre en la clasificación. Vuelve a revisar tu nombre e inténtalo de nuevo"})
 
+    # INITIALIZING NAME
+    my_position = 0 
 
 driver.close()
