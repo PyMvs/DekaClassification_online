@@ -22,7 +22,7 @@ web = "https://es.deka.fit/race-results/?eventid=266769"
 
 # PERSONAL INFORMATION
 MY_NAME = os.getenv("my_name") #SECRETS GITHUB
-my_gender = "O" # M / F
+MY_GENDER = "O" # M / F
 
 ############################
 ####    WEB SCRAPING    ####
@@ -92,9 +92,9 @@ for comp, path in COMPETITIONS.items():
         output = f"{pais} - {nombre} - {categoria}. Tiempo: {tiempo}"
 
         if pais == "ES":
-            if my_gender in categoria:
+            if MY_GENDER in categoria:
 
-                if nombre == my_name: # SEARCH MY NAME AND SAVE IT TO SHOW IT LATER
+                if nombre == MY_NAME: # SEARCH MY NAME AND SAVE IT TO SHOW IT LATER
                     my_position = count
                     my_time = tiempo
 
