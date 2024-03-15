@@ -40,4 +40,4 @@ jobs:
         chat_id: ${{ secrets.CHAT_ID }}
         my_name: ${{ secrets.MY_NAME }}
       run: |
-        python script DekaClassification_online.py
+        python script DekaClassificator_online.py
