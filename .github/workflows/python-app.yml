@@ -36,8 +36,8 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Python script DekaClassification_online.py
       env:
-        token_key: ${{ TOKEN_KEY }}
-        chat_id: ${{ CHAT_ID }}
-        my_name: ${{ MY_NAME }}
+        token_key: ${{ secrets.TOKEN_KEY }}
+        chat_id: ${{ secrets.CHAT_ID }}
+        my_name: ${{ secrets.MY_NAME }}
       run: |
         python script DekaClassification_online.py
