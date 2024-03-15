@@ -112,7 +112,7 @@ for comp, path in COMPETITIONS.items():
         requests.post("https://api.telegram.org/bot" + TOKEN_KEY + "/sendMessage", data={"chat_id": CHAT_ID, "text": f"\n---------------------------------------"})
 
     except:
-        requests.post("https://api.telegram.org/bot" + TOKEN_KEY +"/sendMessage", data={"chat_id": CHAT_ID, "text": f"\nNo se encontró tu nombre en la clasificación de " + comp. Vuelve a revisar tu nombre e inténtalo de nuevo"})
+        requests.post("https://api.telegram.org/bot" + TOKEN_KEY +"/sendMessage", data={"chat_id": CHAT_ID, "text": f"\nNo se encontró tu nombre en la clasificación de " + comp + ".  Vuelve a revisar tu nombre e inténtalo de nuevo"})
 
     # INITIALIZING NAME
     my_position = 0 
