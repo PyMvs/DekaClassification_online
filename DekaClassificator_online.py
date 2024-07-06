@@ -22,7 +22,7 @@ web = "https://es.deka.fit/race-results/?eventid=266769"
 
 # PERSONAL INFORMATION
 MY_NAME = os.getenv("my_name") #SECRETS GITHUB
-MY_GENDER = "O" # M / F
+MY_GENDER = " " # M / F
 
 ############################
 ####    WEB SCRAPING    ####
@@ -53,18 +53,37 @@ for comp, path in COMPETITIONS.items():
 
     select_competition = driver.find_element(By.XPATH, path)
     select_competition.click()
-
-    time.sleep(1)
-
-    # Showing all participants
-    Show_all_participants = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[4]/table/tbody[5]/tr/td/a[2]")
-    Show_all_participants.click()
-
+    
     time.sleep(2)
+    
+    if COMPETITIONS = "DEKA FIT":
+        
+        Select_Overall = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[2]/div[1]/div[3]/select/option[1]")
+        Select_Overall.click()
+    
+        time.sleep(3)
+    
+        # Showing all participants
+        Show_all_participants = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[4]/table/tbody[3]/tr/td/a[2]")
+        Show_all_participants.click()   
+    
+        time.sleep(3)
+    
+        # Extrat element HTML to analyse
+        html_data = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[4]/table/tbody[2]")
+        html_data = html_data.get_attribute('outerHTML')
+        
+    else:
 
-    # ExtraCt element HTML to analyse
-    html_data = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[4]/table/tbody[4]")
-    html_data = html_data.get_attribute('outerHTML')
+        # Showing all participants
+        Show_all_participants = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[4]/table/tbody[5]/tr/td/a[2]")
+        Show_all_participants.click()
+    
+        time.sleep(3)
+    
+        # ExtraCt element HTML to analyse
+        html_data = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[4]/table/tbody[4]")
+        html_data = html_data.get_attribute('outerHTML')
 
     soup = BeautifulSoup(html_data, 'html.parser')
 
