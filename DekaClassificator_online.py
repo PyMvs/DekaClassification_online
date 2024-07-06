@@ -56,7 +56,7 @@ for comp, path in COMPETITIONS.items():
     
     time.sleep(2)
     
-    if COMPETITIONS == "DEKA FIT":
+    if comp == "DEKA FIT":
         
         Select_Overall = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[2]/div[1]/div[3]/select/option[1]")
         Select_Overall.click()
