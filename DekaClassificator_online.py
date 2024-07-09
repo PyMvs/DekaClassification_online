@@ -61,13 +61,13 @@ for comp, path in COMPETITIONS.items():
         Select_Overall = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[2]/div[1]/div[3]/select/option[1]")
         Select_Overall.click()
     
-        time.sleep(3)
+        time.sleep(5)
     
         # Showing all participants
         Show_all_participants = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[4]/table/tbody[3]/tr/td/a[2]")
         Show_all_participants.click()   
     
-        time.sleep(3)
+        time.sleep(10)
     
         # Extrat element HTML to analyse
         html_data = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[4]/table/tbody[2]")
@@ -79,7 +79,7 @@ for comp, path in COMPETITIONS.items():
         Show_all_participants = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[4]/table/tbody[5]/tr/td/a[2]")
         Show_all_participants.click()
     
-        time.sleep(3)
+        time.sleep(5)
     
         # ExtraCt element HTML to analyse
         html_data = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div[1]/div/main/div/article/section/div/div[4]/table/tbody[4]")
